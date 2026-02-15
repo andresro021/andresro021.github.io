@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Una carta virtual de San Valentín llena de cariño y buenos deseos." />
+  <title>💌 Carta de San Valentín</title>
+
+  <!-- Tipografías elegantes y legibles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       1. PANTALLA DE BIENVENIDA
+       ============================================================ -->
+  <section id="welcome-screen" aria-label="Pantalla de bienvenida">
+    <!-- Corazones / partículas flotantes -->
+    <div id="particles-container" aria-hidden="true"></div>
+
+    <div class="welcome-content">
+      <h1 class="welcome-title">Feliz día del amor y la amistad</h1>
+      <p class="welcome-subtitle">Babosa, tengo algo especial para ti…</p>
+      <button id="btn-open" class="btn-open" aria-label="Abrir la carta">
+        Abrir mi carta 💌
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       2. CONTENIDO PRINCIPAL
+       ============================================================ -->
+  <main id="main-content" aria-label="Contenido de la carta">
+
+    <!-- Fondo decorativo con flores -->
+    <div class="bg-decoration" aria-hidden="true">
+      <!-- Columna izquierda -->
+      <span class="bg-flower bg-flower-1">🌷</span>
+      <span class="bg-flower bg-flower-2">🌹</span>
+      <span class="bg-flower bg-flower-3">💮</span>
+      <span class="bg-flower bg-flower-4">🏵️</span>
+      <span class="bg-flower bg-flower-5">🌷</span>
+      <span class="bg-flower bg-flower-6">🌹</span>
+      <span class="bg-flower bg-flower-7">💮</span>
+      <span class="bg-flower bg-flower-8">🏵️</span>
+      <!-- Columna derecha -->
+      <span class="bg-flower bg-flower-9">🌷</span>
+      <span class="bg-flower bg-flower-10">🌹</span>
+      <span class="bg-flower bg-flower-11">💮</span>
+      <span class="bg-flower bg-flower-12">🏵️</span>
+      <span class="bg-flower bg-flower-13">🌷</span>
+      <span class="bg-flower bg-flower-14">🌹</span>
+      <span class="bg-flower bg-flower-15">💮</span>
+      <span class="bg-flower bg-flower-16">🏵️</span>
+      <!-- Dispersas centro/extra -->
+      <span class="bg-flower bg-flower-17">🌷</span>
+      <span class="bg-flower bg-flower-18">🌹</span>
+      <span class="bg-flower bg-flower-19">💮</span>
+      <span class="bg-flower bg-flower-20">🏵️</span>
+      <span class="bg-flower bg-flower-21">🌷</span>
+      <span class="bg-flower bg-flower-22">🌹</span>
+      <span class="bg-flower bg-flower-23">💮</span>
+      <span class="bg-flower bg-flower-24">🏵️</span>
+
+      <!-- Fotos sutiles de fondo: Yo (izq) y Jane (der), casi tocándose -->
+      <img class="bg-portrait bg-portrait-yo" src="images/Yo.webp" alt="" />
+      <img class="bg-portrait bg-portrait-jane" src="images/Jane.webp" alt="" />
+    </div>
+
+    <!-- ── Sección del sobre ── -->
+    <section class="envelope-section" aria-label="Sobre y carta">
+
+      <!-- Membrete del sobre -->
+      <div class="envelope-membrete scroll-reveal">
+        <p class="membrete-para">Para: <strong>Jane</strong>, mi persona especial 💌</p>
+        <p class="membrete-de">De: <strong>Andrés</strong></p>
+      </div>
+
+      <div class="envelope-wrapper" role="button" tabindex="0" aria-label="Haz clic para abrir el sobre">
+        <div class="envelope">
+          <!-- Solapa -->
+          <div class="envelope-flap" aria-hidden="true"></div>
+          <!-- Cuerpo -->
+          <div class="envelope-body" aria-hidden="true"></div>
+          <!-- Sello -->
+          <span class="envelope-seal" aria-hidden="true">❤️</span>
+        </div>
+      </div>
+
+      <p class="envelope-hint scroll-reveal">Toca el sobre para abrirlo ✨</p>
+
+      <!-- ── Carta ── -->
+      <div class="letter-container">
+        <div class="letter">
+          <!-- Flores decorativas — Lirios del valle, tulipanes, hortensias, rosas inglesas -->
+          <span class="flower flower-tl" aria-hidden="true">🌷</span> <!-- Tulipán rosado -->
+          <span class="flower flower-tr" aria-hidden="true">🌹</span> <!-- Rosa inglesa -->
+          <span class="flower flower-bl" aria-hidden="true">💮</span> <!-- Hortensia / lirio del valle -->
+          <span class="flower flower-br" aria-hidden="true">🏵️</span> <!-- Rosa inglesa abierta -->
+
+          <p class="letter-date" id="letter-date"></p>
+          <h2 class="letter-greeting" id="letter-greeting"></h2>
+          <div class="letter-body" id="letter-body"></div>
+          <p class="letter-closing" id="letter-closing"></p>
+          <p class="letter-signature" id="letter-signature"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Sección de Recuerdos ── -->
+    <section class="memories-section" aria-label="Galería de recuerdos">
+      <h2 class="memories-title scroll-reveal">Nuestros Recuerdos 📸</h2>
+      <p class="memories-subtitle scroll-reveal">Momentos que guardo en el corazón</p>
+      <div class="gallery" id="gallery">
+        <!-- Las polaroids se generan dinámicamente desde script.js -->
+      </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer class="footer scroll-reveal">
+      <p>Hecho con <span>❤</span> para alguien muy especial</p>
+    </footer>
+  </main>
+
+  <!-- ============================================================
+       3. BADGE DE ANIVERSARIO
+       ============================================================ -->
+  <div class="anniversary-badge" id="anniversary-badge">
+    <span class="anniversary-icon">🕐</span>
+    <p class="anniversary-text">Hoy <strong>14 de febrero</strong> cumplimos <strong>1 mes</strong></p>
+    <p class="anniversary-sub">¡Feliz primer mes de amistad en este gran día! 🌹</p>
+  </div>
+
+  <!-- ============================================================
+       4. BOTÓN DE MÚSICA (Taylor Swift)
+       ============================================================ -->
+  <button id="music-toggle" class="music-toggle" title="Activar música"
+    aria-label="Activar o desactivar música de fondo">
+    🎵
+  </button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>
